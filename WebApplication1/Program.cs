@@ -22,8 +22,8 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod(); // Permite cualquier mtodo HTTP (GET, POST, PUT, DELETE, etc.)
     });
 });
+//builder.WebHost.UseUrls("http://0.0.0.0:8082"); // Esto permite que la API escuche conexiones desde cualquier IP, incluyendo las externas (como la de tu máquina host).
 var app = builder.Build();
-builder.WebHost.UseUrls("http://0.0.0.0:8082"); // Esto permite que la API escuche conexiones desde cualquier IP, incluyendo las externas (como la de tu máquina host).
 
 // Configure the HTTP request pipeline.
 

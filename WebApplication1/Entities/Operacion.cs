@@ -3,6 +3,7 @@
     public class OperacionRequest
     {
         public string Operacion { get; set; }
+        
         public int Valor1 { get; set; }
         public int Valor2 { get; set; }
     }

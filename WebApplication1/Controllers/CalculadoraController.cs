@@ -23,14 +23,8 @@ namespace WebApplication1.Controllers
         [HttpPost("operar")]
         public async Task<IActionResult> Operar([FromBody] OperacionRequest request)
         {
-            int resultado = request.Operacion.ToLower() switch
-            {
-                "sumar" => await _soapClient.Sumar(request.Valor1, request.Valor2),
-                "restar" => await _soapClient.Restar(request.Valor1, request.Valor2),
-                "multiplicar" => await _soapClient.Multiplicar(request.Valor1, request.Valor2),
-                "dividir" => await _soapClient.Dividir(request.Valor1, request.Valor2),
-                _ => throw new ArgumentException("Operación no válida")
-            };
+            int resultado = await _soapClient.RealizarOperacion(request.Operacion, request.Valor1, request.Valor2);
+
 
             var respuesta = new OperacionResponse
             {

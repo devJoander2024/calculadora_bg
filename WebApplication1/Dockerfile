@@ -1,4 +1,4 @@
-# Usa la imagen base de .NET SDK para compilar la aplicaci髇
+# Usa la imagen base de .NET SDK para compilar la aplicaci贸n
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
@@ -6,11 +6,11 @@ WORKDIR /app
 COPY *.csproj ./
 RUN dotnet restore
 
-# Copia todos los archivos del proyecto y construye la aplicaci髇
+# Copia todos los archivos del proyecto y construye la aplicaci贸n
 COPY . ./
 RUN dotnet publish -c Release -o out
 
-# Usa una imagen m醩 ligera para ejecutar la aplicaci髇 (runtime)
+# Usa una imagen m谩s ligera para ejecutar la aplicaci贸n (runtime)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
@@ -19,5 +19,5 @@ COPY --from=build /app/out ./
 EXPOSE 80
 EXPOSE 443
 
-# Comando para ejecutar la aplicaci髇
-ENTRYPOINT ["dotnet", "WebApplication.dll"]
+# Comando para ejecutar la aplicaci贸n
+ENTRYPOINT ["dotnet", "WebApplication1.dll"]
