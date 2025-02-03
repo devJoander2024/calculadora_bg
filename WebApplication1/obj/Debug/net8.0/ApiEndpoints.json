@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "WebApplication1.Controllers.CalculadoraController",
+    "Method": "ObtenerHistorial",
+    "RelativePath": "api/Calculadora/historial",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.CalculadoraController",
+    "Method": "Operar",
+    "RelativePath": "api/Calculadora/operar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebApplication1.Entities.OperacionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
